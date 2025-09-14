@@ -35,7 +35,11 @@ const Landing: React.FC = () => {
   const handleLogin = () => {
     setShowLogin(null);
     // Navigation will be handled by the auth context
-    window.location.href = "/dashboard";
+    if (showLogin === "teacher") {
+      window.location.href = "/teacher";
+    } else {
+      window.location.href = "/dashboard";
+    }
   };
 
   const handleShopButtonClick = () => {
